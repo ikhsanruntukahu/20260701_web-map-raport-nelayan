@@ -6,7 +6,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("Peta Lokasi Penangkapan Nelayan Raport Tahunan")
+st.title("Peta Lokasi Penangkapan Tahunan")
 
 components.iframe(
     "https://ikhsanruntukahu.github.io/20260701_web-map-raport-nelayan/",
@@ -15,8 +15,7 @@ components.iframe(
 )
 
 st.markdown("""
-## WebGIS ini dibuat untuk visualisasi spasial lokasi penangkapan ikan oleh Nelayan Tuna Skala Kecil untuk ditampilkan sebagai hasil **Raport Nelayan** secara interaktif.
-
-## Sumber Data
-- **Data lokasi penangkapan**: Spottrace
+#ini dibuat untuk visualisasi pada raport nelayan tahunan baik secara site maupun indovidu/kapal
+#Sumber Data
+- *Data lokasi penangkapan**: Spottrace, Nemo dll
 """)
