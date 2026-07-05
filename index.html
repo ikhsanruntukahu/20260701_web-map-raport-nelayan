@@ -37,9 +37,9 @@
         <script src="js/labels.js"></script>
         <script src="js/leaflet.photon.js"></script>
         <script src="data/WPP_1.js"></script>
-        <script src="data/LakasiPendaratanNelayan_2.js"></script>
-        <script src="data/ZonaKawasanKonservasiBuru_3.js"></script>
-        <script src="data/ZonaKawasanKonservasiBuruSelatan_4.js"></script>
+        <script src="data/ZonaKawasanKonservasiBuru_2.js"></script>
+        <script src="data/ZonaKawasanKonservasiBuruSelatan_3.js"></script>
+        <script src="data/LakasiPendaratanNelayan_4.js"></script>
         <script src="data/LokasiSpottraceStopPosition_5.js"></script>
         <script src="data/KlasifikasiKepadatanPerahuNelayan_6.js"></script>
         <script src="data/Batas12MilLaut_7.js"></script>
@@ -174,78 +174,7 @@
         });
         bounds_group.addLayer(layer_WPP_1);
         map.addLayer(layer_WPP_1);
-        function pop_LakasiPendaratanNelayan_2(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['NAME'] !== null ? autolinker.link(String(feature.properties['NAME']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_LakasiPendaratanNelayan_2_0() {
-            return {
-                pane: 'pane_LakasiPendaratanNelayan_2',
-                radius: 6.4,
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,255,255,1.0)',
-                interactive: true,
-            }
-        }
-        function style_LakasiPendaratanNelayan_2_1() {
-            return {
-                pane: 'pane_LakasiPendaratanNelayan_2',
-                radius: 1.4,
-                opacity: 1,
-                color: 'rgba(0,0,0,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 2.0,
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(0,0,0,1.0)',
-                interactive: true,
-            }
-        }
-        map.createPane('pane_LakasiPendaratanNelayan_2');
-        map.getPane('pane_LakasiPendaratanNelayan_2').style.zIndex = 402;
-        map.getPane('pane_LakasiPendaratanNelayan_2').style['mix-blend-mode'] = 'normal';
-        var layer_LakasiPendaratanNelayan_2 = new L.geoJson.multiStyle(json_LakasiPendaratanNelayan_2, {
-            attribution: '',
-            interactive: true,
-            dataVar: 'json_LakasiPendaratanNelayan_2',
-            layerName: 'layer_LakasiPendaratanNelayan_2',
-            pane: 'pane_LakasiPendaratanNelayan_2',
-            onEachFeature: pop_LakasiPendaratanNelayan_2,
-            pointToLayers: [function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_LakasiPendaratanNelayan_2_0(feature));
-            },function (feature, latlng) {
-                var context = {
-                    feature: feature,
-                    variables: {}
-                };
-                return L.circleMarker(latlng, style_LakasiPendaratanNelayan_2_1(feature));
-            },
-        ]});
-        bounds_group.addLayer(layer_LakasiPendaratanNelayan_2);
-        map.addLayer(layer_LakasiPendaratanNelayan_2);
-        function pop_ZonaKawasanKonservasiBuru_3(feature, layer) {
+        function pop_ZonaKawasanKonservasiBuru_2(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['NZ_KK'] !== null ? autolinker.link(String(feature.properties['NZ_KK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -270,11 +199,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ZonaKawasanKonservasiBuru_3_0(feature) {
+        function style_ZonaKawasanKonservasiBuru_2_0(feature) {
             switch(String(feature.properties['NZ_KK'])) {
                 case 'ZONA INTI':
                     return {
-                pane: 'pane_ZonaKawasanKonservasiBuru_3',
+                pane: 'pane_ZonaKawasanKonservasiBuru_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -283,13 +212,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(3,243,19,1.0)',
+                fillColor: 'rgba(217,10,7,1.0)',
                 interactive: true,
             }
                     break;
                 case 'ZONA PEMANFAATAN TERBATAS':
                     return {
-                pane: 'pane_ZonaKawasanKonservasiBuru_3',
+                pane: 'pane_ZonaKawasanKonservasiBuru_2',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -298,27 +227,27 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(251,253,10,1.0)',
+                fillColor: 'rgba(243,255,53,1.0)',
                 interactive: true,
             }
                     break;
             }
         }
-        map.createPane('pane_ZonaKawasanKonservasiBuru_3');
-        map.getPane('pane_ZonaKawasanKonservasiBuru_3').style.zIndex = 403;
-        map.getPane('pane_ZonaKawasanKonservasiBuru_3').style['mix-blend-mode'] = 'normal';
-        var layer_ZonaKawasanKonservasiBuru_3 = new L.geoJson(json_ZonaKawasanKonservasiBuru_3, {
+        map.createPane('pane_ZonaKawasanKonservasiBuru_2');
+        map.getPane('pane_ZonaKawasanKonservasiBuru_2').style.zIndex = 402;
+        map.getPane('pane_ZonaKawasanKonservasiBuru_2').style['mix-blend-mode'] = 'normal';
+        var layer_ZonaKawasanKonservasiBuru_2 = new L.geoJson(json_ZonaKawasanKonservasiBuru_2, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ZonaKawasanKonservasiBuru_3',
-            layerName: 'layer_ZonaKawasanKonservasiBuru_3',
-            pane: 'pane_ZonaKawasanKonservasiBuru_3',
-            onEachFeature: pop_ZonaKawasanKonservasiBuru_3,
-            style: style_ZonaKawasanKonservasiBuru_3_0,
+            dataVar: 'json_ZonaKawasanKonservasiBuru_2',
+            layerName: 'layer_ZonaKawasanKonservasiBuru_2',
+            pane: 'pane_ZonaKawasanKonservasiBuru_2',
+            onEachFeature: pop_ZonaKawasanKonservasiBuru_2,
+            style: style_ZonaKawasanKonservasiBuru_2_0,
         });
-        bounds_group.addLayer(layer_ZonaKawasanKonservasiBuru_3);
-        map.addLayer(layer_ZonaKawasanKonservasiBuru_3);
-        function pop_ZonaKawasanKonservasiBuruSelatan_4(feature, layer) {
+        bounds_group.addLayer(layer_ZonaKawasanKonservasiBuru_2);
+        map.addLayer(layer_ZonaKawasanKonservasiBuru_2);
+        function pop_ZonaKawasanKonservasiBuruSelatan_3(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <td colspan="2">' + (feature.properties['NZ_KK'] !== null ? autolinker.link(String(feature.properties['NZ_KK']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
@@ -340,11 +269,11 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_ZonaKawasanKonservasiBuruSelatan_4_0(feature) {
+        function style_ZonaKawasanKonservasiBuruSelatan_3_0(feature) {
             switch(String(feature.properties['NZ_KK'])) {
                 case 'Inti':
                     return {
-                pane: 'pane_ZonaKawasanKonservasiBuruSelatan_4',
+                pane: 'pane_ZonaKawasanKonservasiBuruSelatan_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -353,13 +282,13 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,254,31,1.0)',
+                fillColor: 'rgba(217,10,7,1.0)',
                 interactive: true,
             }
                     break;
                 case 'Lainnya sesuai Peruntukan Kawasan':
                     return {
-                pane: 'pane_ZonaKawasanKonservasiBuruSelatan_4',
+                pane: 'pane_ZonaKawasanKonservasiBuruSelatan_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -374,7 +303,7 @@
                     break;
                 case 'Pemanfaatan Terbatas':
                     return {
-                pane: 'pane_ZonaKawasanKonservasiBuruSelatan_4',
+                pane: 'pane_ZonaKawasanKonservasiBuruSelatan_3',
                 opacity: 1,
                 color: 'rgba(35,35,35,0.0)',
                 dashArray: '',
@@ -389,20 +318,91 @@
                     break;
             }
         }
-        map.createPane('pane_ZonaKawasanKonservasiBuruSelatan_4');
-        map.getPane('pane_ZonaKawasanKonservasiBuruSelatan_4').style.zIndex = 404;
-        map.getPane('pane_ZonaKawasanKonservasiBuruSelatan_4').style['mix-blend-mode'] = 'normal';
-        var layer_ZonaKawasanKonservasiBuruSelatan_4 = new L.geoJson(json_ZonaKawasanKonservasiBuruSelatan_4, {
+        map.createPane('pane_ZonaKawasanKonservasiBuruSelatan_3');
+        map.getPane('pane_ZonaKawasanKonservasiBuruSelatan_3').style.zIndex = 403;
+        map.getPane('pane_ZonaKawasanKonservasiBuruSelatan_3').style['mix-blend-mode'] = 'normal';
+        var layer_ZonaKawasanKonservasiBuruSelatan_3 = new L.geoJson(json_ZonaKawasanKonservasiBuruSelatan_3, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_ZonaKawasanKonservasiBuruSelatan_4',
-            layerName: 'layer_ZonaKawasanKonservasiBuruSelatan_4',
-            pane: 'pane_ZonaKawasanKonservasiBuruSelatan_4',
-            onEachFeature: pop_ZonaKawasanKonservasiBuruSelatan_4,
-            style: style_ZonaKawasanKonservasiBuruSelatan_4_0,
+            dataVar: 'json_ZonaKawasanKonservasiBuruSelatan_3',
+            layerName: 'layer_ZonaKawasanKonservasiBuruSelatan_3',
+            pane: 'pane_ZonaKawasanKonservasiBuruSelatan_3',
+            onEachFeature: pop_ZonaKawasanKonservasiBuruSelatan_3,
+            style: style_ZonaKawasanKonservasiBuruSelatan_3_0,
         });
-        bounds_group.addLayer(layer_ZonaKawasanKonservasiBuruSelatan_4);
-        map.addLayer(layer_ZonaKawasanKonservasiBuruSelatan_4);
+        bounds_group.addLayer(layer_ZonaKawasanKonservasiBuruSelatan_3);
+        map.addLayer(layer_ZonaKawasanKonservasiBuruSelatan_3);
+        function pop_LakasiPendaratanNelayan_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['NAME'] !== null ? autolinker.link(String(feature.properties['NAME']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        function style_LakasiPendaratanNelayan_4_0() {
+            return {
+                pane: 'pane_LakasiPendaratanNelayan_4',
+                radius: 6.4,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,255,255,1.0)',
+                interactive: true,
+            }
+        }
+        function style_LakasiPendaratanNelayan_4_1() {
+            return {
+                pane: 'pane_LakasiPendaratanNelayan_4',
+                radius: 1.4,
+                opacity: 1,
+                color: 'rgba(0,0,0,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,0,0,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_LakasiPendaratanNelayan_4');
+        map.getPane('pane_LakasiPendaratanNelayan_4').style.zIndex = 404;
+        map.getPane('pane_LakasiPendaratanNelayan_4').style['mix-blend-mode'] = 'normal';
+        var layer_LakasiPendaratanNelayan_4 = new L.geoJson.multiStyle(json_LakasiPendaratanNelayan_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_LakasiPendaratanNelayan_4',
+            layerName: 'layer_LakasiPendaratanNelayan_4',
+            pane: 'pane_LakasiPendaratanNelayan_4',
+            onEachFeature: pop_LakasiPendaratanNelayan_4,
+            pointToLayers: [function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_LakasiPendaratanNelayan_4_0(feature));
+            },function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_LakasiPendaratanNelayan_4_1(feature));
+            },
+        ]});
+        bounds_group.addLayer(layer_LakasiPendaratanNelayan_4);
+        map.addLayer(layer_LakasiPendaratanNelayan_4);
         function pop_LokasiSpottraceStopPosition_5(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
@@ -448,16 +448,16 @@
         function style_LokasiSpottraceStopPosition_5_0() {
             return {
                 pane: 'pane_LokasiSpottraceStopPosition_5',
-                radius: 4.0,
+                radius: 5.6,
                 opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
+                color: 'rgba(0,0,0,1.0)',
                 dashArray: '',
                 lineCap: 'butt',
                 lineJoin: 'miter',
                 weight: 1,
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,0,0,1.0)',
+                fillColor: 'rgba(3,243,19,1.0)',
                 interactive: true,
             }
         }
@@ -484,8 +484,7 @@
         function pop_KlasifikasiKepadatanPerahuNelayan_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Keterangan Kepadatan</th>\
-                        <td>' + (feature.properties['KET'] !== null ? autolinker.link(String(feature.properties['KET']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <td colspan="2">' + (feature.properties['Ket'] !== null ? autolinker.link(String(feature.properties['Ket']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -496,124 +495,84 @@
         }
 
         function style_KlasifikasiKepadatanPerahuNelayan_6_0(feature) {
-            switch(String(feature.properties['KET'])) {
-                case 'Sparse':
+            switch(String(feature.properties['Ket'])) {
+                case 'Sangat Jarang':
                     return {
                 pane: 'pane_KlasifikasiKepadatanPerahuNelayan_6',
-                opacity: 1,
-                color: 'rgba(128,14,16,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                stroke: false, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(237,248,251,1.0)',
+                fillColor: 'rgba(255,245,240,1.0)',
                 interactive: true,
             }
                     break;
-                case 'Low Density':
+                case 'Kepadatan Rendah':
                     return {
                 pane: 'pane_KlasifikasiKepadatanPerahuNelayan_6',
-                opacity: 1,
-                color: 'rgba(255,35,38,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                stroke: false, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(203,235,237,1.0)',
+                fillColor: 'rgba(254,220,205,1.0)',
                 interactive: true,
             }
                     break;
-                case 'Moderately Low Density':
+                case 'Kepadatan Cukup Rendah':
                     return {
                 pane: 'pane_KlasifikasiKepadatanPerahuNelayan_6',
-                opacity: 1,
-                color: 'rgba(128,14,16,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                stroke: false, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(167,221,217,1.0)',
+                fillColor: 'rgba(252,179,152,1.0)',
                 interactive: true,
             }
                     break;
-                case 'Intermediate Density':
+                case 'Kepadatan Sedang':
                     return {
                 pane: 'pane_KlasifikasiKepadatanPerahuNelayan_6',
-                opacity: 1,
-                color: 'rgba(128,14,16,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                stroke: false, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(124,203,182,1.0)',
+                fillColor: 'rgba(252,134,102,1.0)',
                 interactive: true,
             }
                     break;
-                case 'Moderately High Density':
+                case 'Kepadatan Cukup Tinggi':
                     return {
                 pane: 'pane_KlasifikasiKepadatanPerahuNelayan_6',
-                opacity: 1,
-                color: 'rgba(128,14,16,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                stroke: false, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(85,185,144,1.0)',
+                fillColor: 'rgba(246,87,62,1.0)',
                 interactive: true,
             }
                     break;
-                case 'High Density':
+                case 'Kepadatan Tinggi':
                     return {
                 pane: 'pane_KlasifikasiKepadatanPerahuNelayan_6',
-                opacity: 1,
-                color: 'rgba(128,14,16,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                stroke: false, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(52,167,105,1.0)',
+                fillColor: 'rgba(221,42,37,1.0)',
                 interactive: true,
             }
                     break;
-                case 'Very High Density':
+                case 'Kepadatan Sangat Tinggi':
                     return {
                 pane: 'pane_KlasifikasiKepadatanPerahuNelayan_6',
-                opacity: 1,
-                color: 'rgba(128,14,16,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                stroke: false, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(25,139,73,1.0)',
+                fillColor: 'rgba(179,18,24,1.0)',
                 interactive: true,
             }
                     break;
-                case 'Extremely High Density (or Hyperdense)':
+                case 'Kepadatan Sangat Tinggi Sekali':
                     return {
                 pane: 'pane_KlasifikasiKepadatanPerahuNelayan_6',
-                opacity: 1,
-                color: 'rgba(128,14,16,0.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
+                stroke: false, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,109,44,1.0)',
+                fillColor: 'rgba(103,0,13,1.0)',
                 interactive: true,
             }
                     break;
@@ -759,11 +718,11 @@
         var overlaysTree = [
             {label: '<img src="legend/BatasWPP_8.png" /> Batas WPP', layer: layer_BatasWPP_8},
             {label: '<img src="legend/Batas12MilLaut_7.png" /> Batas 12 Mil Laut', layer: layer_Batas12MilLaut_7},
-            {label: 'Klasifikasi Kepadatan Perahu Nelayan<br /><table><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_Sparse0.png" /></td><td>Sparse</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_LowDensity1.png" /></td><td>Low Density</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_ModeratelyLowDensity2.png" /></td><td>Moderately Low Density</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_IntermediateDensity3.png" /></td><td>Intermediate Density</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_ModeratelyHighDensity4.png" /></td><td>Moderately High Density</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_HighDensity5.png" /></td><td>High Density</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_VeryHighDensity6.png" /></td><td>Very High Density</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_ExtremelyHighDensityorHyperdense7.png" /></td><td>Extremely High Density (or Hyperdense)</td></tr></table>', layer: layer_KlasifikasiKepadatanPerahuNelayan_6},
+            {label: 'Klasifikasi Kepadatan Perahu Nelayan<br /><table><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_SangatJarang0.png" /></td><td>Sangat Jarang</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_KepadatanRendah1.png" /></td><td>Kepadatan Rendah</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_KepadatanCukupRendah2.png" /></td><td>Kepadatan Cukup Rendah</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_KepadatanSedang3.png" /></td><td>Kepadatan Sedang</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_KepadatanCukupTinggi4.png" /></td><td>Kepadatan Cukup Tinggi</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_KepadatanTinggi5.png" /></td><td>Kepadatan Tinggi</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_KepadatanSangatTinggi6.png" /></td><td>Kepadatan Sangat Tinggi</td></tr><tr><td style="text-align: center;"><img src="legend/KlasifikasiKepadatanPerahuNelayan_6_KepadatanSangatTinggiSekali7.png" /></td><td>Kepadatan Sangat Tinggi Sekali</td></tr></table>', layer: layer_KlasifikasiKepadatanPerahuNelayan_6},
             {label: '<img src="legend/LokasiSpottraceStopPosition_5.png" /> Lokasi Spottrace Stop Position', layer: layer_LokasiSpottraceStopPosition_5},
-            {label: 'Zona Kawasan Konservasi Buru Selatan<br /><table><tr><td style="text-align: center;"><img src="legend/ZonaKawasanKonservasiBuruSelatan_4_Inti0.png" /></td><td>Inti</td></tr><tr><td style="text-align: center;"><img src="legend/ZonaKawasanKonservasiBuruSelatan_4_LainnyasesuaiPeruntukanKawasan1.png" /></td><td>Lainnya sesuai Peruntukan Kawasan</td></tr><tr><td style="text-align: center;"><img src="legend/ZonaKawasanKonservasiBuruSelatan_4_PemanfaatanTerbatas2.png" /></td><td>Pemanfaatan Terbatas</td></tr></table>', layer: layer_ZonaKawasanKonservasiBuruSelatan_4},
-            {label: 'Zona Kawasan Konservasi Buru<br /><table><tr><td style="text-align: center;"><img src="legend/ZonaKawasanKonservasiBuru_3_ZONAINTI0.png" /></td><td>ZONA INTI</td></tr><tr><td style="text-align: center;"><img src="legend/ZonaKawasanKonservasiBuru_3_ZONAPEMANFAATANTERBATAS1.png" /></td><td>ZONA PEMANFAATAN TERBATAS</td></tr></table>', layer: layer_ZonaKawasanKonservasiBuru_3},
-            {label: '<img src="legend/LakasiPendaratanNelayan_2.png" /> Lakasi Pendaratan Nelayan', layer: layer_LakasiPendaratanNelayan_2},
+            {label: '<img src="legend/LakasiPendaratanNelayan_4.png" /> Lakasi Pendaratan Nelayan', layer: layer_LakasiPendaratanNelayan_4},
+            {label: 'Zona Kawasan Konservasi Buru Selatan<br /><table><tr><td style="text-align: center;"><img src="legend/ZonaKawasanKonservasiBuruSelatan_3_Inti0.png" /></td><td>Inti</td></tr><tr><td style="text-align: center;"><img src="legend/ZonaKawasanKonservasiBuruSelatan_3_LainnyasesuaiPeruntukanKawasan1.png" /></td><td>Lainnya sesuai Peruntukan Kawasan</td></tr><tr><td style="text-align: center;"><img src="legend/ZonaKawasanKonservasiBuruSelatan_3_PemanfaatanTerbatas2.png" /></td><td>Pemanfaatan Terbatas</td></tr></table>', layer: layer_ZonaKawasanKonservasiBuruSelatan_3},
+            {label: 'Zona Kawasan Konservasi Buru<br /><table><tr><td style="text-align: center;"><img src="legend/ZonaKawasanKonservasiBuru_2_ZONAINTI0.png" /></td><td>ZONA INTI</td></tr><tr><td style="text-align: center;"><img src="legend/ZonaKawasanKonservasiBuru_2_ZONAPEMANFAATANTERBATAS1.png" /></td><td>ZONA PEMANFAATAN TERBATAS</td></tr></table>', layer: layer_ZonaKawasanKonservasiBuru_2},
             {label: '<img src="legend/WPP_1.png" /> WPP ', layer: layer_WPP_1},
             {label: "OSM Standard", layer: layer_OSMStandard_0},]
         var lay = L.control.layers.tree(null, overlaysTree,{
@@ -791,12 +750,12 @@
               i++;
         });
         var i = 0;
-        layer_LakasiPendaratanNelayan_2.eachLayer(function(layer) {
+        layer_LakasiPendaratanNelayan_4.eachLayer(function(layer) {
             var context = {
                 feature: layer.feature,
                 variables: {}
             };
-            layer.bindTooltip((layer.feature.properties['NAME'] !== null?String('<div style="color: #323232; font-size: 7pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['NAME']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_LakasiPendaratanNelayan_2'});
+            layer.bindTooltip((layer.feature.properties['NAME'] !== null?String('<div style="color: #323232; font-size: 7pt; font-family: \'Open Sans\', sans-serif;">' + layer.feature.properties['NAME']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_LakasiPendaratanNelayan_4'});
             labels.push(layer);
             totalMarkers += 1;
               layer.added = true;
@@ -816,15 +775,15 @@
               addLabel(layer, i);
               i++;
         });
-        resetLabels([layer_WPP_1,layer_LakasiPendaratanNelayan_2,layer_Batas12MilLaut_7]);
+        resetLabels([layer_WPP_1,layer_LakasiPendaratanNelayan_4,layer_Batas12MilLaut_7]);
         map.on("zoomend", function(){
-            resetLabels([layer_WPP_1,layer_LakasiPendaratanNelayan_2,layer_Batas12MilLaut_7]);
+            resetLabels([layer_WPP_1,layer_LakasiPendaratanNelayan_4,layer_Batas12MilLaut_7]);
         });
         map.on("layeradd", function(){
-            resetLabels([layer_WPP_1,layer_LakasiPendaratanNelayan_2,layer_Batas12MilLaut_7]);
+            resetLabels([layer_WPP_1,layer_LakasiPendaratanNelayan_4,layer_Batas12MilLaut_7]);
         });
         map.on("layerremove", function(){
-            resetLabels([layer_WPP_1,layer_LakasiPendaratanNelayan_2,layer_Batas12MilLaut_7]);
+            resetLabels([layer_WPP_1,layer_LakasiPendaratanNelayan_4,layer_Batas12MilLaut_7]);
         });
         </script>        
     </body>
