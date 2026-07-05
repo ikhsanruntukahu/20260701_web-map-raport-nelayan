@@ -78,8 +78,8 @@ with kolom_tengah:
     # 4. Teks Keterangan di Bawah Peta
     st.markdown("""
     ---
-    Dashboard ini dibuat untuk visualisasi pada raport nelayan tahunan, baik secara *site* (lokasi) maupun individu/kapal.
+    Dashboard ini dibuat untuk uji coba visualisasi pada raport nelayan tahunan, baik secara *site* (lokasi) maupun individu/kapal.
 
     ### Sumber Data
-    - **Data lokasi penangkapan**: Spottrace, Nemo, dll.
+    **Data lokasi penangkapan**: Spottrace, Nemo, dll.
     """)
