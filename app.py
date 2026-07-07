@@ -2,14 +2,19 @@ import streamlit as st
 import streamlit.components.v1 as components
 from PIL import Image
 
+
+
+
 # ==============================================================================
 # WAJIB DI ATAS: 1. Pengaturan Layout Halaman Utama (Wide/Landscape)
 # ==============================================================================
+# LANDING PAGE
+logo = Image.open("_ MDPI Primary Logo.png")
 st.set_page_config(
-    page_title="Peta Lokasi Penangkapan Tahunan",
+    page_title="Peta Lokasi Penangakapan Ikan",
+    page_icon=logo,
     layout="wide"
 )
-
 # Import logo/gambar
 logo = Image.open("_ MDPI Primary Logo.png")
 
